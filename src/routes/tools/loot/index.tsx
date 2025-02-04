@@ -46,8 +46,6 @@ export default component$(() => {
             zone.value = value;
             axios.get(`${API_URL}/loot/get/` + value).then((res) => {
               lootData.value = res.data;
-              // refresh the chart
-              chartType.value = "pie";
             });
           })}
         />
