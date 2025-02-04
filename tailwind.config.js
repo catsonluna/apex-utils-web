@@ -6,6 +6,7 @@ export default {
       colors: {
         'trans-blue': '#5BCEFA',
         'trans-pink': '#F5A9B8',
+        'apex-red': '#F97B2E',
       },
     },
   },

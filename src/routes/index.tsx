@@ -1,12 +1,14 @@
 import { component$} from "@builder.io/qwik";
 import Card from "~/components/common/card";
-
+import Topbar from "~/components/common/topbar";
+import Footer from "~/components/common/footer";
 import { useNavigate } from "@builder.io/qwik-city";
 export default component$(() => {
   const navigation = useNavigate();
   return (
     <>
-      <main class="flex h-[95vh] flex-col items-center text-center">
+      <Topbar />
+      <main class="flex flex-col items-center text-center">
         <img 
           src="icon.png"
           alt="icon"
@@ -19,8 +21,8 @@ export default component$(() => {
           <span class="text-5xl text-trans-pink">catsonluna</span>
         </h1>
         <p class="text-2xl font-bold w-[60vw]"><span class="text-2xl text-white">Apex Utils</span> is a private application, developed 
-        by <span class="text-2xl text-trans-pink">catsonluna</span> 
-        as a utility tool for Apex Legends analysis and undrstanding. <span class="text-2xl text-white">Apex Utils</span> <span class="text-2xl text-trans-blue">Web</span> is the public version of the application, 
+        by <span class="text-2xl text-trans-pink">catsonluna</span> as 
+        a utility tool for <span class="text-2xl text-apex-red">Apex Legends</span> analysis and undrstanding. <span class="text-2xl text-white">Apex Utils</span> <span class="text-2xl text-trans-blue">Web</span> is the public version of the application, 
            with some select functionality from the original.
           </p>
         <h1 class="text-5xl font-bold mt-8 text-white">Tools</h1>
@@ -29,7 +31,7 @@ export default component$(() => {
             navigation("/tools/loot");
           }}>
             <h1 class="text-4xl font-bold">
-              Loot Odds
+              Zone Loot
             </h1>
             <p class="text-m">
               Select a loot zone, and see the possible loot drops, and its odds
@@ -37,6 +39,7 @@ export default component$(() => {
           </Card>
         </div>
       </main>
+      <Footer />
     </>
   );
 });
