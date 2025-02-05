@@ -11,7 +11,7 @@ export default component$(() => {
       <Topbar />
       <main class="flex flex-col items-center text-center">
         <img 
-          src="icon.png"
+          src="icon-small.png"
           alt="icon"
           class="w-48 h-48"
           width={192}
@@ -21,13 +21,13 @@ export default component$(() => {
           <span class="text-6xl text-white">Apex Utils</span> <span class="text-6xl text-trans-blue">Web</span> <span class="text-2xl font-normal">by</span>{" "}
           <span class="text-5xl text-trans-pink">catsonluna</span>
         </h1>
-        <p class="text-2xl font-bold w-[60vw]"><span class="text-2xl text-white">Apex Utils</span> is a private application, developed 
+        <p class="text-2xl font-bold lg:w-[60vw] md:w-[80vw]"><span class="text-2xl text-white">Apex Utils</span> is a private application, developed 
         by <span class="text-2xl text-trans-pink">catsonluna</span> as 
         a utility tool for <span class="text-2xl text-apex-red">Apex Legends</span> analysis and undrstanding. <span class="text-2xl text-white">Apex Utils</span> <span class="text-2xl text-trans-blue">Web</span> is the public version of the application, 
            with some select functionality from the original.
           </p>
         <h1 class="text-5xl font-bold mt-8 text-white">Tools</h1>
-        <div class="grid grid-cols-1 gap-3">
+        <div class="grid grid-cols-1 gap-3 pb-8">
           <Card onClick$={() => {
             navigation("/tools/loot");
           }}>
