@@ -29,7 +29,18 @@ export default component$(() => {
     lootData.value = loot.data;
   });
 
-  if (!lootData.value) return <></>;
+  if (!lootData.value)
+    return (
+      <>
+        <Topbar />
+        <main class="flex flex-col items-center text-center">
+          <h1 class="mb-8 text-6xl font-bold text-white">Loading...</h1>
+        </main>
+        <Footer />
+      </>
+    );
+
+
   return (
     <>
       <Topbar />
@@ -223,86 +234,90 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Select a loot zone, and see the possible loot drops, and its odds"
+      content:
+        "Select a loot zone, and see the possible loot drops, and its odds",
     },
     {
       property: "og:title", // Changed 'name' to 'property' for better compatibility
-      content: "Apex Utils Web"
+      content: "Apex Utils Web",
     },
     {
       property: "og:description",
-      content: "Select a loot zone, and see the possible loot drops, and its odds"
+      content:
+        "Select a loot zone, and see the possible loot drops, and its odds",
     },
     {
       property: "og:image",
-      content: "https://apex-utils.catsonluna.com/icon-small.png"
+      content: "https://apex-utils.catsonluna.com/icon-small.png",
     },
     {
       property: "og:image:width",
-      content: "300" // Or "512"
+      content: "300", // Or "512"
     },
     {
       property: "og:image:height",
-      content: "300" // Or "512"
+      content: "300", // Or "512"
     },
     {
       property: "og:url", // Ensures correct URL when shared
-      content: "https://apex-utils.catsonluna.com/"
+      content: "https://apex-utils.catsonluna.com/",
     },
     {
       property: "og:type",
-      content: "website"
+      content: "website",
     },
     {
       name: "twitter:card",
-      content: "summary"
+      content: "summary",
     },
     {
       name: "twitter:site",
-      content: "@catsonluna"
+      content: "@catsonluna",
     },
     {
       name: "twitter:creator",
-      content: "@catsonluna"
+      content: "@catsonluna",
     },
     {
       name: "twitter:title",
-      content: "Apex Utils Web"
+      content: "Apex Utils Web",
     },
     {
       name: "twitter:description",
-      content: "Select a loot zone, and see the possible loot drops, and its odds"
+      content:
+        "Select a loot zone, and see the possible loot drops, and its odds",
     },
     {
       name: "twitter:image",
-      content: "https://apex-utils.catsonluna.com/icon-small.png"
+      content: "https://apex-utils.catsonluna.com/icon-small.png",
     },
     {
       name: "robots",
-      content: "index, follow" 
+      content: "index, follow",
     },
     {
       name: "keywords",
-      content: "Apex Legends, Apex Legends Stats, Apex Legends Analysis, Apex Tools, Apex Legends Insights, Apex Legends Tools, Apex Legends Utility, Apex Legends Utility Tool, Apex Utils, Apex Utils Web"
+      content:
+        "Apex Legends, Apex Legends Stats, Apex Legends Analysis, Apex Tools, Apex Legends Insights, Apex Legends Tools, Apex Legends Utility, Apex Legends Utility Tool, Apex Utils, Apex Utils Web",
     },
     {
       name: "author",
-      content: "catsonluna"
+      content: "catsonluna",
     },
     {
       name: "language",
-      content: "en"
+      content: "en",
     },
     {
       name: "theme-color",
-      content: "#b00b69" // Changes the mobile browser color to match branding (optional)
-    }
+      content: "#b00b69", // Changes the mobile browser color to match branding (optional)
+    },
   ],
   links: [
     // Canonical URL (Prevents duplicate content issues)
     {
       rel: "canonical",
-      href: "https://apex-utils.catsonluna.com/"
-    }
-  ]
+      href: "https://apex-utils.catsonluna.com/",
+    },
+  ],
 };
