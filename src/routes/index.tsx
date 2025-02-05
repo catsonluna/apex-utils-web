@@ -62,7 +62,7 @@ export const head: DocumentHead = {
     },
     {
       name: "og:image",
-      content: "icon.png"
+      content: "https://apex-utils.catsonluna.com/icon.png"
     },
     {
       name: "twitter:card",
@@ -86,7 +86,7 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:image",
-      content: "icon.png"
+      content: "https://apex-utils.catsonluna.com/icon.png"
     }
   ]
 }
