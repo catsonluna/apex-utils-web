@@ -1,7 +1,6 @@
 import {
   component$,
   useSignal,
-  useTask$,
   useVisibleTask$,
   $,
   useStore,
@@ -13,7 +12,6 @@ import { API_URL } from "~/utils/consts";
 import Chart from "~/components/charts/chart";
 import { ChartTypeRegistry } from "chart.js";
 import Search from "~/components/common/input/search";
-import { trace } from "console";
 
 export default component$(() => {
   const lootData = useStore<any>({});
