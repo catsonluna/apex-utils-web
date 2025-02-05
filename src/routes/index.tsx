@@ -50,19 +50,35 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for Apex Legends analysis and understanding"
+      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for analyzing and understanding Apex Legends."
     },
     {
-      name: "og:title",
+      property: "og:title", // Changed 'name' to 'property' for better compatibility
       content: "Apex Utils Web"
     },
     {
-      name: "og:description",
-      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for Apex Legends analysis and understanding"
+      property: "og:description",
+      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for analyzing and understanding Apex Legends."
     },
     {
-      name: "og:image",
-      content: "https://apex-utils.catsonluna.com/icon.png"
+      property: "og:image",
+      content: "https://apex-utils.catsonluna.com/icon-small.png"
+    },
+    {
+      property: "og:image:width",
+      content: "300" // Or "512"
+    },
+    {
+      property: "og:image:height",
+      content: "300" // Or "512"
+    },
+    {
+      property: "og:url", // Ensures correct URL when shared
+      content: "https://apex-utils.catsonluna.com/"
+    },
+    {
+      property: "og:type",
+      content: "website"
     },
     {
       name: "twitter:card",
@@ -82,11 +98,38 @@ export const head: DocumentHead = {
     },
     {
       name: "twitter:description",
-      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for Apex Legends analysis and understanding"
+      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for analyzing and understanding Apex Legends."
     },
     {
       name: "twitter:image",
-      content: "https://apex-utils.catsonluna.com/icon.png"
+      content: "https://apex-utils.catsonluna.com/icon-small.png"
+    },
+    {
+      name: "robots",
+      content: "index, follow" 
+    },
+    {
+      name: "keywords",
+      content: "Apex Legends, Apex Legends Stats, Apex Legends Analysis, Apex Tools, Apex Legends Insights, Apex Legends Tools, Apex Legends Utility, Apex Legends Utility Tool, Apex Utils, Apex Utils Web"
+    },
+    {
+      name: "author",
+      content: "catsonluna"
+    },
+    {
+      name: "language",
+      content: "en"
+    },
+    {
+      name: "theme-color",
+      content: "#b00b69" // Changes the mobile browser color to match branding (optional)
+    }
+  ],
+  links: [
+    // Canonical URL (Prevents duplicate content issues)
+    {
+      rel: "canonical",
+      href: "https://apex-utils.catsonluna.com/"
     }
   ]
-}
+};
