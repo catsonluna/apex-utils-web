@@ -3,6 +3,7 @@ import Card from "~/components/common/card";
 import Topbar from "~/components/common/topbar";
 import Footer from "~/components/common/footer";
 import { useNavigate } from "@builder.io/qwik-city";
+import type { DocumentHead } from '@builder.io/qwik-city';
 export default component$(() => {
   const navigation = useNavigate();
   return (
@@ -43,3 +44,49 @@ export default component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Apex Utils Web",
+  meta: [
+    {
+      name: "description",
+      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for Apex Legends analysis and understanding"
+    },
+    {
+      name: "og:title",
+      content: "Apex Utils Web"
+    },
+    {
+      name: "og:description",
+      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for Apex Legends analysis and understanding"
+    },
+    {
+      name: "og:image",
+      content: "icon.png"
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image"
+    },
+    {
+      name: "twitter:site",
+      content: "@catsonluna"
+    },
+    {
+      name: "twitter:creator",
+      content: "@catsonluna"
+    },
+    {
+      name: "twitter:title",
+      content: "Apex Utils Web"
+    },
+    {
+      name: "twitter:description",
+      content: "Apex Utils Web is a public version of Apex Utils, a utility tool for Apex Legends analysis and understanding"
+    },
+    {
+      name: "twitter:image",
+      content: "icon.png"
+    }
+  ]
+}
