@@ -53,7 +53,6 @@ export default component$(() => {
           value={chartType.value}
           onChange={$((val: string) => {
             chartType.value = val as keyof ChartTypeRegistry;
-            console.log(chartType.value);
           })}
         />
         <div class="grid w-[100vw] grid-cols-1 gap-2 rounded-lg bg-[rgba(0,0,0,0.4)] p-4 md:w-[90vw] md:grid-cols-2 ">
@@ -125,11 +124,7 @@ export default component$(() => {
             if (!(zoneData instanceof Object)) return null;
             // go over all children of zoneData and print them
             Object.keys(zoneData).forEach((key) => {
-              console.log(zoneData[key]);
-              // zoneData is an object, print out the count of its keys
               if (zoneData[key] instanceof Object) {
-                console.log("Children: " + Object.keys(zoneData[key]).length);
-                // if more than 1 and not in main level of total
                 if (
                   Object.keys(zoneData[key]).length > 1 &&
                   !Object.keys(lootData.value.total).includes(key)
