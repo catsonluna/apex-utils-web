@@ -21,12 +21,6 @@ export default component$(() => {
         >
           Tools
         </p>
-        <p
-          class="text-2xl font-bold hover:cursor-pointer hover:text-gray-300 m-8"
-          onClick$={() => nav("/tools")}
-        >
-          Github
-        </p>
       </div>
     </header>
   );

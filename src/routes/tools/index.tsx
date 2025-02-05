@@ -11,7 +11,7 @@ export default component$(() => {
       <Topbar />
       <main class="flex flex-col items-center text-center">
         <h1 class="mb-8 text-6xl font-bold text-white">Tools</h1>
-        <p class="w-[60vw] text-2xl font-bold text-white">
+        <p class="lg:w-[60vw] md:w-[80vw] text-2xl font-bold text-white">
           The tools page contains all tools publically released. More tools will
           be released in the future and added here
         </p>
