@@ -53,9 +53,10 @@ export default component$(() => {
           label="Zone"
           value={zone.value}
           onChange={$((value: string) => {
-            zone.value = value;
             axios.get(`${API_URL}/loot/get/` + value).then((res) => {
+              zone.value = value;
               lootData.value = res.data;
+
             });
           })}
         />
