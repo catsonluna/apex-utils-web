@@ -22,6 +22,12 @@ export default component$(() => {
 
   useVisibleTask$(async () => {
     const res = await axios.get(`${API_URL}/loot/zones`);
+    console.log(res.data);
+    res.data.sort((a: string, b: string) => {
+      const aNum = parseInt(a.split("_")[0].slice(1));
+      const bNum = parseInt(b.split("_")[0].slice(1));
+      return bNum - aNum;
+    });
     zones.value = res.data;
     zone.value = zones.value[0];
     const loot = await axios.get(`${API_URL}/loot/get/` + zones.value[0]);
@@ -40,12 +46,11 @@ export default component$(() => {
       </>
     );
 
-
   return (
     <>
       <Topbar />
       <main class="flex flex-col items-center text-center">
-        <h1 class="mb-8 text-6xl font-bold text-white">
+        <h1 class="mb-8 text-6xl font-bold text-white break-words break-all">
           {lootData.value.info.zone}
         </h1>
         <Search
@@ -56,7 +61,6 @@ export default component$(() => {
             axios.get(`${API_URL}/loot/get/` + value).then((res) => {
               zone.value = value;
               lootData.value = res.data;
-
             });
           })}
         />
