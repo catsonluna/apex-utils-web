@@ -8,6 +8,7 @@ import Map from "./map";
 import { BackTitle } from "~/components/common/backTitle";
 import Topbar from "~/components/common/topbar";
 import Footer from "~/components/common/footer";
+import { API_URL } from "~/utils/consts";
 export default component$(() => {
   const worldInfo = useSignal<any>({});
   const zones = useSignal<string[]>([]);
@@ -79,13 +80,13 @@ export default component$(() => {
 });
 
 async function getWorldInfo() {
-  const response = await fetch("https://api.catsonluna.com/world/info");
+  const response = await fetch(`${API_URL}/world/info`);
   const data = await response.json();
   return data;
 }
 
 async function getZones() {
-  const response = await fetch("https://api.catsonluna.com/zones");
+  const response = await fetch(`${API_URL}/zones`);
   const data = await response.json();
   return data;
 }

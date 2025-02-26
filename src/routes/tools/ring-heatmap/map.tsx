@@ -7,6 +7,7 @@ import {
   $,
 } from "@builder.io/qwik";
 import Sidebar from "./sidebar";
+import { API_URL } from "~/utils/consts";
 
 
 // Extend Leaflet control to include sidebar
@@ -313,14 +314,14 @@ function getZoneCoords(zone: any, offset: any) {
 
 async function getZonePeriods(zone: string) {
   const response = await fetch(
-    `https://api.catsonluna.com/rings/${zone}/periods`,
+    `${API_URL}/rings/${zone}/periods`,
   );
   const data = await response.json();
   return data.reverse();
 }
 
 async function getZoneData(zone: string) {
-  const response = await fetch(`https://api.catsonluna.com/rings/${zone}/final`);
+  const response = await fetch(`${API_URL}/rings/${zone}/final`);
   const data = await response.json();
   return data;
 }
