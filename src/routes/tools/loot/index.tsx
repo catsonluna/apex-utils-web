@@ -1,3 +1,4 @@
+/* eslint-disable qwik/no-use-visible-task */
 import {
   component$,
   useSignal,
@@ -10,7 +11,7 @@ import Footer from "~/components/common/footer";
 import axios from "axios";
 import { API_URL } from "~/utils/consts";
 import Chart from "~/components/charts/chart";
-import { ChartTypeRegistry } from "chart.js";
+import type { ChartTypeRegistry } from "chart.js";
 import Search from "~/components/common/input/search";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
