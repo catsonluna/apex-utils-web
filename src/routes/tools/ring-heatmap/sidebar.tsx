@@ -40,7 +40,7 @@ export default component$<{
     onZonePeriodChange,
   }) => {
     return (
-      <div id="sidebar" class="leaflet-sidebar collapsed">
+      <div id="sidebar" class={"leaflet-sidebar collapsed"}>
         <div class="leaflet-sidebar-tabs">
           <ul
             role="tablist"
@@ -71,12 +71,14 @@ export default component$<{
               values={zones}
               value={selectedZone}
               onChange={$((value: string) => onZoneChange(value))}
+              key={selectedZone}
             />
             <SearchInput
               label="Select Map"
               values={worldOptions}
               value={selectedWorld}
               onChange={$((value: string) => onWorldChange(value))}
+              key={selectedZone}
             />
             <SearchInput
 
@@ -85,6 +87,7 @@ export default component$<{
               values={zonePeriods}
               value={zonePeriod}
               onChange={$((value: string) => onZonePeriodChange(value))}
+              key={selectedZone}
             />
             </div>
           <div class="leaflet-sidebar-pane" id="settings">

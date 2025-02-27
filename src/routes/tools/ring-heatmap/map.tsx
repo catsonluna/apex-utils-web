@@ -9,7 +9,6 @@ import {
 import Sidebar from "./sidebar";
 import { API_URL } from "~/utils/consts";
 
-
 // Extend Leaflet control to include sidebar
 declare module "leaflet" {
   namespace control {
@@ -139,7 +138,6 @@ export default component$<{
       attributionControl: false,
       zoomControl: false,
     });
-    
 
     // Define image bounds and add initial image overlay using current world image
     const bounds = new L.LatLngBounds([0, 0], [4096, 4096]);
@@ -235,7 +233,7 @@ export default component$<{
       style={{ position: "relative", height: "1024px", width: "1024px" }}
     >
       <div
-      id="map"
+        id="map"
         ref={mapContainer}
         style={{
           height: "100%",
@@ -313,9 +311,7 @@ function getZoneCoords(zone: any, offset: any) {
 }
 
 async function getZonePeriods(zone: string) {
-  const response = await fetch(
-    `${API_URL}/rings/${zone}/periods`,
-  );
+  const response = await fetch(`${API_URL}/rings/${zone}/periods`);
   const data = await response.json();
   return data.reverse();
 }
@@ -325,4 +321,3 @@ async function getZoneData(zone: string) {
   const data = await response.json();
   return data;
 }
-
