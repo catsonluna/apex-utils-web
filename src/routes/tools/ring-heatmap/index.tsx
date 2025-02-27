@@ -93,7 +93,7 @@ async function getZones() {
 }
 
 export const head: DocumentHead = {
-  title: "End Ring heatmap",
+  title: "End Ring Heatmap",
   meta: [
     {
       name: "description",
