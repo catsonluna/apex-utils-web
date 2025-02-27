@@ -83,7 +83,7 @@ export default component$<{
             <SearchInput
 
               label={"Select Period (" + heatdata.length
-                + " zones)"}
+                + " ends)"}
               values={zonePeriods}
               value={zonePeriod}
               onChange={$((value: string) => onZonePeriodChange(value))}

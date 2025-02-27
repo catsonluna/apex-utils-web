@@ -46,7 +46,7 @@ export default component$(() => {
               End Ring Heatmap
             </h1>
             <p class="text-m">
-              View the hotest places the ring end at
+              View the hotest places the ring ends at
             </p>
           </Card>
         </div>

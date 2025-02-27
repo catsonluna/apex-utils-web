@@ -26,11 +26,11 @@ export default component$<{
   const zonePeriods = useSignal<any>({});
 
   const mapContainer = useSignal<HTMLElement>();
-  const map = useSignal<any>(); // Will hold the Leaflet map instance
+  const map = useSignal<any>(); 
 
   const heatData = useSignal<[number, number, number][]>([]);
   const heatmapLayer = useSignal<any>();
-  const imageOverlayLayer = useSignal<any>(); // Signal for image overlay
+  const imageOverlayLayer = useSignal<any>(); 
   const heatmapVisuals = useSignal<any>({
     blur: 13,
     radius: 31,
@@ -50,12 +50,9 @@ export default component$<{
     track(() => zone.value);
     if (!zone.value) return;
 
-    // Get all available maps for the new zone
     worlds.value = getAllMaps(worldInfo, zone.value);
-    // Always reset the selected map to the first available option
     world.value = worlds.value[Object.keys(worlds.value)[0]];
 
-    // Fetch periods for the new zone and always reset to the first period
     zonePeriods.value = await getZonePeriods(zone.value);
 
     if (zonePeriods.value.length > 0) {

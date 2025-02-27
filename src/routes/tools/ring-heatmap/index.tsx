@@ -9,7 +9,7 @@ import { BackTitle } from "~/components/common/backTitle";
 import Topbar from "~/components/common/topbar";
 import Footer from "~/components/common/footer";
 import { API_URL } from "~/utils/consts";
-import { DocumentHead } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
   const worldInfo = useSignal<any>({});
   const zones = useSignal<string[]>([]);
@@ -35,12 +35,12 @@ export default component$(() => {
     track(() => zones.value);
   });
 
-  if (!worldInfo.value || !zones.value) {
+  if (!worldInfo.value) {
     return (
       <>
         <Topbar />
         <main class="flex flex-col items-center justify-center text-center">
-          <BackTitle title={`Zone Heatmap`} />
+          <BackTitle title={`End Ring Heatmap`} />
           <div>
             <h1>Loading...</h1>
           </div>
@@ -56,7 +56,7 @@ export default component$(() => {
       <>
         <Topbar />
         <main class="flex flex-col items-center justify-center text-center">
-          <BackTitle title={`Zone Heatmap`} />
+          <BackTitle title={`End Ring Heatmap`} />
           <div>
             <h1 class="text-white">This tool is only available on desktop {":("}</h1>
           </div>
@@ -70,7 +70,7 @@ export default component$(() => {
     <>
       <Topbar />
       <main class="flex flex-col items-center justify-center text-center">
-        <BackTitle title={`Zone Heatmap`} />
+        <BackTitle title={`End Ring Heatmap`} />
         <div class="mb-16">
           <Map zones={zones.value} worldInfo={worldInfo.value} />
         </div>
@@ -93,7 +93,7 @@ async function getZones() {
 }
 
 export const head: DocumentHead = {
-  title: "Ring heatmap",
+  title: "End Ring heatmap",
   meta: [
     {
       name: "description",
