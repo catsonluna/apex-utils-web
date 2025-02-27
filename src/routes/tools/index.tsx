@@ -26,6 +26,17 @@ export default component$(() => {
               Select a loot zone, and see the possible loot drops, and its odds
             </p>
           </Card>
+          <Card
+            onClick$={() => {
+              navigation("/tools/ring-heatmap");
+            }}
+          >
+            <h1 class="text-4xl font-bold">End Ring Heatmap</h1>
+            <p class="text-m">
+              View the hotest places the ring ends at
+            </p>
+          </Card>
+          
         </div>
       </main>
       <Footer />

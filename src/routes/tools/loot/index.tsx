@@ -1,3 +1,4 @@
+/* eslint-disable qwik/no-use-visible-task */
 import {
   component$,
   useSignal,
@@ -10,9 +11,10 @@ import Footer from "~/components/common/footer";
 import axios from "axios";
 import { API_URL } from "~/utils/consts";
 import Chart from "~/components/charts/chart";
-import { ChartTypeRegistry } from "chart.js";
+import type { ChartTypeRegistry } from "chart.js";
 import Search from "~/components/common/input/search";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { BackTitle } from "~/components/common/backTitle";
 
 export default component$(() => {
   const lootData = useStore<any>({});
@@ -40,7 +42,7 @@ export default component$(() => {
       <>
         <Topbar />
         <main class="flex flex-col items-center text-center">
-          <h1 class="mb-8 text-6xl font-bold text-white">Loading...</h1>
+          <BackTitle title={`Loading...`} />
         </main>
         <Footer />
       </>
@@ -50,9 +52,8 @@ export default component$(() => {
     <>
       <Topbar />
       <main class="flex flex-col items-center text-center">
-        <h1 class="mb-8 text-6xl font-bold text-white break-words break-all">
-          {lootData.value.info.zone}
-        </h1>
+        <BackTitle title={lootData.value.info.zone} />
+
         <Search
           values={zones.value}
           label="Zone"
