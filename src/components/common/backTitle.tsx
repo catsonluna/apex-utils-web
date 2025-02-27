@@ -18,7 +18,7 @@ export const BackTitle = component$((props: CardProps) => {
           onClick$={() => loc.prevUrl ? window.history.back() : nav('/')}
         />
       </div>
-      <h1 class="m-4 text-6xl font-bold">{props.title}</h1>
+      <h1 class="m-4 text-6xl font-bold break-words break-all">{props.title}</h1>
     </div>
   );
 });
